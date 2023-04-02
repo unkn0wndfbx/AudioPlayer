@@ -25,12 +25,12 @@ La zone du bas comporte trois boutons qui permettent de :
 Ce projet a été codé en HTML, CSS et JavaScript.
 
 ### Librairies
-- FontAwesome ;
-- Google Font.
+- FontAwesome.
 
 ### Caractéristiques
 - Contenu responsive multiplateforme ;
 - Animations au chargement de la page et au survol des éléments.
+- Testé sur Google Chrome, Firefox et Brave.
 
 ## Crédits
 - Design : unkn0wnd.fbx ;
