@@ -33,13 +33,10 @@ function loadMusic() {
     musicImage.src = `images/${tableMusic[musicIndex].image}`;
     music.src = `musiques/${tableMusic[musicIndex].link}.wav`;
     
-    checkFav(tableMusic, musicIndex);
-
-    console.log(tableMusic);
-
+    checkFav();
+    
     let backgroundImage = document.querySelector(".audio_player");
     backgroundImage.style.backgroundImage = `url(${musicImage.src})`;
-    // backgroundImage.style.filter = "grayscale(.7)";
 }
 
 // fonction : jouer la musique

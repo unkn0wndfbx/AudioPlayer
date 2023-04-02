@@ -5,8 +5,8 @@ favoriteBtn.addEventListener("click", () => {
     favoriteBtn.classList.toggle("favorite_checked");
 });
 
-// fonction : enlever favoris
-function checkFav(tableMusic, musicIndex) {
+// fonction : verifier si favoris
+function checkFav() {
     if (tableMusic[musicIndex].heart == "true") {  
         favoriteBtn.classList.add("favorite_checked");
     }
@@ -15,6 +15,7 @@ function checkFav(tableMusic, musicIndex) {
     }
 };
 
+// fonction : modifier tableau favoris
 function toggleHeartIcon() {
     if (tableMusic[musicIndex].heart == "true") {
         tableMusic[musicIndex].heart =  "false";
