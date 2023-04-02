@@ -122,6 +122,7 @@ i {
     letter-spacing: .5px;
     font-family: 'Lilita One';
     font-weight: 500;
+    font-display: swap;
     width: 100%;
     text-align: center;
 }
@@ -226,6 +227,7 @@ i {
     color: rgba(255, 255, 255, 0.5);
     font-family: 'Poppins';
     font-weight: 500;
+    font-display: swap;
 }
 
 /* troisieme container */
@@ -336,6 +338,7 @@ i:not(:hover), span:not(:hover) {
 .music_list .top .top_left span:nth-child(2) {
     font-size: clamp(19px, 3vw, 25px);
     font-family: 'Lilita One';
+    font-display: swap;
 }
 
 .music_list .top .top_left span {
@@ -393,6 +396,7 @@ i:not(:hover), span:not(:hover) {
     font-size: clamp(17px, 2vw, 18px);
     color: rgba(255, 255, 255, 0.5);
     font-family: 'Poppins';
+    font-display: swap;
     font-weight: 500;
     text-shadow: 0 0 5px var(--color-shadow-player);
     transition: color .1s ease;

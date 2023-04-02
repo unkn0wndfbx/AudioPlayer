@@ -31,7 +31,7 @@ function loadMusic() {
     musicName.innerText = tableMusic[musicIndex].name;
     musicArtist.innerText = tableMusic[musicIndex].artist;
     musicImage.src = `images/${tableMusic[musicIndex].image}`;
-    music.src = `musiques/${tableMusic[musicIndex].link}.wav`;
+    music.src = `musiques/${tableMusic[musicIndex].link}.mp3`;
     
     checkFav();
     
@@ -219,7 +219,7 @@ for (let i = 0; i < tableMusic.length; i++) {
                         <span>${tableMusic[i].name}</span>
                         <p>${tableMusic[i].artist}</p>
                     </div>
-                    <audio class="${tableMusic[i].link}" src="musiques/${tableMusic[i].link}.wav"></audio>
+                    <audio class="${tableMusic[i].link}" src="musiques/${tableMusic[i].link}.mp3"></audio>
                     <div class="row2">
                         <span id="${tableMusic[i].link}" class="duration_time">3:40</span>
                         <span class="material-symbols-rounded" id="download">download</span>
@@ -285,8 +285,8 @@ function clicked(element) {
 
 // fonction : telecharger la musique
 function download(musicName, musicLink) {
-    const url = `musiques/${musicLink}.wav`;
-    const filename = `${musicName}.wav`;
+    const url = `musiques/${musicLink}.mp3`;
+    const filename = `${musicName}.mp3`;
     fetch(url)
       .then(res => res.blob())
       .then(blob => {
