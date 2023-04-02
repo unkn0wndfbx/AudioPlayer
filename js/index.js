@@ -18,7 +18,7 @@ const contPlayer = audioPlayer.querySelector(".container_player");
 const contButtons = audioPlayer.querySelector(".container_buttons");
 
 // morceau aleatoire au chargement de la page
-let musicIndex = Math.floor((Math.random() * tableMusic.length) + 1);
+let musicIndex = Math.floor((Math.random() * tableMusic.length));
 
 // fonction : charger la musique
 window.addEventListener("load", () => {
@@ -27,14 +27,19 @@ window.addEventListener("load", () => {
 })
 
 // fonction : importer les musiques avec toutes les infos
-function loadMusic(indexNum) {
-    musicName.innerText = tableMusic[indexNum - 1].name;
-    musicArtist.innerText = tableMusic[indexNum - 1].artist;
-    musicImage.src = `images/${tableMusic[indexNum - 1].image}`;
-    music.src = `musiques/${tableMusic[indexNum - 1].link}.wav`;
+function loadMusic() {
+    musicName.innerText = tableMusic[musicIndex].name;
+    musicArtist.innerText = tableMusic[musicIndex].artist;
+    musicImage.src = `images/${tableMusic[musicIndex].image}`;
+    music.src = `musiques/${tableMusic[musicIndex].link}.wav`;
+    
+    checkFav(tableMusic, musicIndex);
+
+    console.log(tableMusic);
 
     let backgroundImage = document.querySelector(".audio_player");
     backgroundImage.style.backgroundImage = `url(${musicImage.src})`;
+    // backgroundImage.style.filter = "grayscale(.7)";
 }
 
 // fonction : jouer la musique
@@ -56,25 +61,23 @@ function pauseMusic() {
 // fonction : musique suivante
 function nextMusic() {
     musicIndex++;
-    if(musicIndex > tableMusic.length) {
-        musicIndex = 1;
+    if(musicIndex > tableMusic.length - 1) {
+        musicIndex = 0;
     }
-    loadMusic(musicIndex);
+    loadMusic();
     playMusic();
-    playingNow()
-    removeFav();
+    playingNow();
 }
 
 // fonction : musique precedente
 function previousMusic() {
     musicIndex--;
-    if(musicIndex < 1) {
-        musicIndex = tableMusic.length;
+    if(musicIndex < 0) {
+        musicIndex = tableMusic.length - 1;
     }
-    loadMusic(musicIndex);
+    loadMusic();
     playMusic();
     playingNow();
-    removeFav();
 }
 
 // fonction : condition pause/play
@@ -214,7 +217,7 @@ audioPlayer.addEventListener("click", (e) => {
 const ulTag = audioPlayer.querySelector("ul");
 // creer des balises li en fonction de la longueur du tableau pour la liste de musique
 for (let i = 0; i < tableMusic.length; i++) {
-    let liTag = `<li li-index="${i + 1}">
+    let liTag = `<li li-index="${i}">
                     <div class="row">
                         <span>${tableMusic[i].name}</span>
                         <p>${tableMusic[i].artist}</p>
@@ -241,7 +244,7 @@ for (let i = 0; i < tableMusic.length; i++) {
         liAudioDuration.setAttribute("duration", `${totalMinutes}:${totalSecondes}`);
     });
 
-    let row2Element = ulTag.querySelector(`[li-index="${i + 1}"] .row2 #download`);
+    let row2Element = ulTag.querySelector(`[li-index="${i}"] .row2 #download`);
     row2Element.addEventListener("click", function(event) {
         download(tableMusic[i].name, tableMusic[i].link);
         event.stopPropagation();
