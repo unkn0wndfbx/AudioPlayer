@@ -469,7 +469,7 @@ ul li.playing {
         padding: 20px;
     }
     .container_buttons span:nth-child(2) {
-        margin-inline: 8%;
+        margin-inline: 12%;
         width: 68px;
         min-width: 68px;
         height: 68px;
