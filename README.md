@@ -1,5 +1,5 @@
 # Audio Player
-Player audio développé par unkn0wnd.fbx pour le Concours #5 (Intégrer une page avec un lecteur audio / vidéo) organisé par "Le Repaire du Web".
+Player audio développé par unkn0wnd.fbx pour le Concours #5 (Intégrer une page avec un lecteur audio / vidéo) organisé par "Le Repaire du Web" : https://unkn0wndfbx.github.io/AudioPlayer/
 
 ## Interface
 
