@@ -25,7 +25,8 @@ La zone du bas comporte trois boutons qui permettent de :
 Ce projet a été codé en HTML, CSS et JavaScript.
 
 ### Librairies
-- FontAwesome.
+- FontAwesome ;
+- Google Fonts.
 
 ### Caractéristiques
 - Contenu responsive multiplateforme ;
