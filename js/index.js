@@ -31,7 +31,7 @@ function loadMusic(indexNum) {
     musicName.innerText = tableMusic[indexNum - 1].name;
     musicArtist.innerText = tableMusic[indexNum - 1].artist;
     musicImage.src = `images/${tableMusic[indexNum - 1].image}`;
-    music.src = `musiques/${tableMusic[indexNum - 1].link}.mp3`;
+    music.src = `musiques/${tableMusic[indexNum - 1].link}.wav`;
 
     let backgroundImage = document.querySelector(".audio_player");
     backgroundImage.style.backgroundImage = `url(${musicImage.src})`;
@@ -62,6 +62,7 @@ function nextMusic() {
     loadMusic(musicIndex);
     playMusic();
     playingNow()
+    removeFav();
 }
 
 // fonction : musique precedente
@@ -73,6 +74,7 @@ function previousMusic() {
     loadMusic(musicIndex);
     playMusic();
     playingNow();
+    removeFav();
 }
 
 // fonction : condition pause/play
@@ -182,6 +184,10 @@ music.addEventListener("ended", () => {
     }
 })
 
+
+
+// liste de musique :
+
 // fonction : afficher la liste de musique quand l'icone est cliquee
 showBtn.addEventListener("click", (e) => {
     musicList.classList.toggle("show_music");
@@ -213,7 +219,7 @@ for (let i = 0; i < tableMusic.length; i++) {
                         <span>${tableMusic[i].name}</span>
                         <p>${tableMusic[i].artist}</p>
                     </div>
-                    <audio class="${tableMusic[i].link}" src="musiques/${tableMusic[i].link}.mp3"></audio>
+                    <audio class="${tableMusic[i].link}" src="musiques/${tableMusic[i].link}.wav"></audio>
                     <div class="row2">
                         <span id="${tableMusic[i].link}" class="duration_time">3:40</span>
                         <span class="material-symbols-rounded" id="download">download</span>
@@ -279,8 +285,8 @@ function clicked(element) {
 
 // fonction : telecharger la musique
 function download(musicName, musicLink) {
-    const url = `musiques/${musicLink}.mp3`;
-    const filename = `${musicName}.mp3`;
+    const url = `musiques/${musicLink}.wav`;
+    const filename = `${musicName}.wav`;
     fetch(url)
       .then(res => res.blob())
       .then(blob => {

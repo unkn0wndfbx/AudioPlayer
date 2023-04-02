@@ -1,21 +1,27 @@
 // tableau des musiques
 let tableMusic = [
     {
-        name:  "Name",
-        artist: "Artist",
+        name:  "Una mattina",
+        artist: "L. Einaudi",
         image: "image_test.png",
-        link: "test",
+        link: "una_mattina",
     },
     {
-        name:  "2",
-        artist: "3",
+        name:  "Prélude 1",
+        artist: "J.S. Bach",
         image: "image_test.png",
-        link: "test2",
+        link: "prelude_1",
     },
     {
-        name:  "3",
-        artist: "4",
+        name:  "La valse d'Amélie",
+        artist: "Y. Tiersen",
         image: "image_test.png",
-        link: "test3",
+        link: "valse_amelie",
+    },
+    {
+        name:  "Le moulin",
+        artist: "Y. Tiersen",
+        image: "image_test.png",
+        link: "moulin",
     }
 ]

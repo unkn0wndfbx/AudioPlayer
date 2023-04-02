@@ -1,5 +1,4 @@
 /* importation des polices */
-@import url('https://fonts.googleapis.com/css2?family=Alkatra&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
 
@@ -46,7 +45,7 @@ i {
 /* player audio */
 .audio_player {
     width: 80%;
-    max-width: 430px;
+    max-width: 450px;
     min-width: 250px;
     height: auto;
     padding: 30px;
@@ -106,12 +105,12 @@ i {
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     margin-top: 15px;
 }
 
 .name h1 {
-    font-size: clamp(19px, 5vw, 30px);
+    font-size: clamp(22px, 5vw, 30px);
     margin-inline: 5px;
     pointer-events: none;
     background: linear-gradient(90deg, var(--color-primaire1) 0%, var(--color-primaire2) 75%);
@@ -123,6 +122,17 @@ i {
     letter-spacing: .5px;
     font-family: 'Lilita One';
     font-weight: 500;
+    width: 100%;
+    text-align: center;
+}
+
+.name h1:nth-child(2) {
+    letter-spacing: 0;
+    text-align: center;
+    width: 5%;
+    margin-inline: 0;
+    min-width: 40px;
+    font-weight: 700;
 }
 
 /* bouttons */
@@ -212,7 +222,7 @@ i {
 }
 
 .progress_bar .timer span {
-    font-size: clamp(11.5px, 2vw, 13.5px);
+    font-size: clamp(12px, 2vw, 13.5px);
     color: rgba(255, 255, 255, 0.5);
     font-family: 'Poppins';
     font-weight: 500;
@@ -342,10 +352,37 @@ i:not(:hover), span:not(:hover) {
 .music_list ul {
     max-height: 224px;
     overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    transition: 0;
+    padding-right: 6px;
 }
 
+/* sroll bar liste de musique */
 .music_list ul::-webkit-scrollbar {
-    width: 0;
+    width: .45em;
+}
+
+.music_list ul::-webkit-scrollbar-thumb {
+    background-color: var(--color-primaire2);
+    border-radius: 100vw;
+}
+
+.music_list ul::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-primaire1);
+}
+
+.music_list ul::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 100vw;
+    margin-block: .2em;
+}
+
+@supports (scrollbar-color: red blue) {
+    .music_list ul {
+        scrollbar-color: var(--color-primaire2) transparent;
+        scrollbar-width: auto;
+    }
 }
 
 .music_list ul li {
