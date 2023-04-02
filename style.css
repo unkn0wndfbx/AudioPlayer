@@ -56,7 +56,6 @@ i {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    /* background: url(images/image_test.png); */
     background-position: -185px;
     background-repeat: no-repeat;
     background-size: cover;
@@ -459,6 +458,13 @@ ul li.playing {
 
 /* adaptation aux differents appareils */
 @media only screen and (max-width: 425px){
+    body {
+        align-items: center;
+        justify-content: flex-start;
+        min-height: 100vh;
+        padding-block: 10%;
+    }
+    
 	.audio_player {
         padding: 20px;
     }
