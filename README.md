@@ -18,7 +18,7 @@ La zone centrale permet de :
 La zone du bas comporte trois boutons qui permettent de :
 - Modifier le type de lecture : normal, en boucle, aléatoirement ;
 - Mettre le morceau en favoris ;
-- Ouvrir et naviguer dans la playlist, avec la possiblité de télécharger les morceaux.
+- Ouvrir et naviguer dans la playlist, avec la possibilité de télécharger les morceaux.
 
 ## Implémentation
 ### Languages utilisés
